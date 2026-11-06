@@ -72,7 +72,7 @@ El formulario y el botón de pedido están identificados como simulaciones. No s
 
 ## Publicar esta copia
 
-Publica esta carpeta en un **repositorio nuevo**. No cambies a público el repositorio privado original: sus revisiones antiguas no se han saneado. La copia local de entrega tiene un historial nuevo sin remoto configurado.
+Esta versión se publica en un **repositorio independiente**, con un historial nuevo. El repositorio privado original conserva sus revisiones antiguas y no debe hacerse público como parte de esta demostración.
 
 Para una demo estática publica solo `index.html`, `app.js`, `core.js`, `demo-data.js`, `styles.css` y `assets/`. El servidor incluido es para vista previa local y escucha exclusivamente en `127.0.0.1`.
 
