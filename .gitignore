@@ -1,0 +1,28 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+config.js
+config.local.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.code-workspace
+
+# Tooling and local output
+node_modules/
+coverage/
+playwright-report/
+test-results/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Private source assets must not enter this public demo
+Fotos/
+private/
+backups/
+*.zip

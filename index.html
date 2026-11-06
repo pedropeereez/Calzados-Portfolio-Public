@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'none'; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none';">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Descubre tu estilo con la máxima comodidad y calidad. Proyecto de portfolio con catálogo ficticio y carrito local.">
+    <title>Calzados · Demo</title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+    <link rel="stylesheet" href="assets/tailwind.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script defer src="assets/lucide.min.js"></script>
+</head>
+<body class="bg-zinc-50 text-slate-800 flex flex-col min-h-screen">
+
+    <div class="bg-slate-900 text-white text-center text-xs px-4 py-3">Demo de portfolio · productos ficticios · sin compras ni envíos de datos</div>
+    <a class="sr-only focus:not-sr-only" href="#catalogo">Saltar al catálogo</a>
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 w-full border-b border-zinc-200/80 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 text-2xl font-extrabold tracking-tight text-slate-900">
+                <img src="assets/logo.svg" class="h-16 rounded-lg" alt="Logo de la demo">
+                <span>Calzados · Demo</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#" class="hover:text-primary transition">Inicio</a>
+                <a href="#catalogo" class="hover:text-primary transition">Catálogo</a>
+                <a href="#catalogo" class="hover:text-primary transition">Novedades</a>
+                <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-2 sm:gap-4">
+
+                <!-- Cart Button -->
+                <button id="open-cart-btn" class="relative rounded-full p-2.5 hover:bg-zinc-100 text-slate-800 transition" aria-label="Abrir carrito">
+                    <i data-lucide="shopping-bag" class="h-6 w-6"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white hidden">0</span>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden rounded-full p-2.5 hover:bg-zinc-100 text-slate-800 transition" aria-label="Abrir menú">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-zinc-900 overflow-hidden py-16 lg:py-24">
+        <!-- Background accents -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#ea580c15,transparent_50%)]"></div>
+        <div class="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6 text-center lg:text-left">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-zinc-200">
+                    <i data-lucide="sparkles" class="h-3.5 w-3.5"></i> Colección de demostración
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                    DESCUBRE TU ESTILO<br>
+                    <span class="text-gradient">COMODIDAD Y CALIDAD</span>
+                </h1>
+                <p class="text-base sm:text-lg text-zinc-400 max-w-lg mx-auto lg:mx-0">
+                    Las mejores zapatillas, para todos los estilos.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#catalogo" class="rounded-full bg-white px-8 py-3.5 text-sm font-bold text-slate-900 shadow-md hover:bg-zinc-100 hover:-translate-y-0.5 active:translate-y-0 transition duration-200">
+                        Explorar catálogo
+                    </a>
+                    <a href="#contacto" class="rounded-full border border-zinc-700 px-8 py-3.5 text-sm font-semibold text-zinc-300 hover:bg-zinc-800 hover:text-white transition duration-200">
+                        Saber más
+                    </a>
+                </div>
+            </div>
+            <!-- Hero Image Frame -->
+            <div class="relative flex justify-center">
+                <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-zinc-700 to-zinc-900 opacity-20 blur-2xl"></div>
+                <img src="assets/logo.svg" 
+                     alt="Logo Calzados · Demo" 
+                     class="w-full max-w-md lg:max-w-lg object-contain rounded-2xl drop-shadow-[0_25px_25px_rgba(0,0,0,0.4)] hover:scale-105 transition duration-700 ease-out">
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN APP CONTENT -->
+    <main class="flex-grow mx-auto w-full max-w-7xl px-6 py-12" id="catalogo">
+        <!-- Catalog Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-200 pb-6 mb-8">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Nuestro Catálogo</h2>
+                <p class="text-sm text-zinc-500 mt-1">Una selección ficticia para probar la experiencia de compra</p>
+            </div>
+                <div class="relative w-full md:w-auto">
+                    <input type="text" id="search-input" placeholder="Buscar calzado..." 
+                           class="w-full md:w-48 lg:w-64 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 pl-10 text-sm focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary transition" aria-label="Buscar calzado">
+                    <i data-lucide="search" class="absolute left-3.5 top-2.5 h-4.5 w-4.5 text-zinc-400"></i>
+                </div>
+            <!-- Category Filter Buttons (se cargan dinámicamente) -->
+            <div class="flex flex-wrap gap-2" id="brand-filters"></div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Rendered dynamically via JavaScript -->
+        </div>
+
+        <!-- Empty Search / Filter State -->
+        <div id="empty-state" class="hidden flex-col items-center justify-center py-20 text-center">
+            <div class="rounded-full bg-zinc-100 p-4 text-zinc-400 mb-4">
+                <i data-lucide="package-search" class="h-10 w-10"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800">No encontramos resultados</h3>
+            <p class="text-sm text-zinc-500 mt-1">Intenta cambiar los filtros de búsqueda o categoría.</p>
+        </div>
+    </main>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="contacto" class="bg-white border-t border-zinc-200 py-16">
+        <div class="mx-auto max-w-3xl px-6">
+            <div class="text-center max-w-lg mx-auto mb-10">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-slate-900/5 px-3 py-1 text-xs font-semibold text-slate-800">
+                    <i data-lucide="mail" class="h-3.5 w-3.5"></i> ¿Tienes dudas?
+                </span>
+                <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 mt-2">Formulario de demostración</h2>
+                <p class="text-sm text-zinc-500 mt-2">Prueba la validación del formulario con datos inventados. Nada se envía ni se guarda.</p>
+            </div>
+
+            <form id="contact-form" autocomplete="off" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Nombre Completo</label>
+                        <input type="text" id="contact-name" name="name" maxlength="80" required
+                               class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition">
+                    </div>
+                    <div>
+                        <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Correo Electrónico</label>
+                        <input type="email" id="contact-email" name="email" maxlength="120" required
+                               class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition">
+                    </div>
+                </div>
+                <div>
+                    <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Mensaje</label>
+                    <textarea id="contact-message" name="message" rows="4" maxlength="2000" required
+                              class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition" 
+                              placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <div>
+                    <button type="submit" id="contact-submit-btn"
+                            class="w-full rounded-full bg-slate-900 hover:bg-slate-800 py-4 text-center text-sm font-semibold text-white shadow-lg transition">
+                        Probar formulario
+                    </button>
+                </div>
+                <div id="contact-success-msg" role="status" aria-live="polite" class="hidden rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center text-sm font-semibold text-emerald-800">
+                    Validación completada. No se ha enviado ningún mensaje.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-900 border-t border-zinc-800 text-zinc-400 py-16">
+        <div class="mx-auto max-w-7xl px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            <!-- Columna 1: Marca y Redes Sociales -->
+            <div class="space-y-6">
+                <a href="#" class="flex items-center gap-2 text-xl font-extrabold tracking-tight text-white">
+                    <i data-lucide="zap" class="h-6 w-6 text-primary fill-primary"></i>
+                    <span>Calzados · Demo</span>
+                </a>
+                <p class="text-sm leading-relaxed">
+                    Demostración de una interfaz de comercio electrónico con datos ficticios.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Proyecto de portfolio</h4>
+                <p class="text-sm">Catálogo de ejemplo, búsqueda, variantes y carrito en tu navegador.</p>
+                <p class="text-sm">Esta demostración no representa una tienda operativa.</p>
+            </div>
+            <!-- Columna 3: Compra y Ayuda -->
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Compra y Ayuda</h4>
+                <ul class="text-sm space-y-2.5">
+                    <li><a href="#catalogo" class="hover:text-white transition">Catálogo de Calzado</a></li>
+                    <li><a href="#" data-info="nosotros" class="hover:text-white transition">Sobre nosotros</a></li>
+                    <li><a href="#contacto" class="hover:text-white transition">Contáctanos</a></li>
+                    <li><a href="#" data-info="faqs" class="hover:text-white transition">Preguntas Frecuentes (FAQs)</a></li>
+                    <li><a href="#" data-info="tallas" class="hover:text-white transition">Guía de tallas de zapatillas</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Información Legal -->
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Información Legal</h4>
+                <ul class="text-sm space-y-2.5">
+                    <li><a href="#" data-info="terminos" class="hover:text-white transition">Uso de la demostración</a></li>
+                    <li><a href="#" data-info="privacidad" class="hover:text-white transition">Política de privacidad</a></li>
+                    <li><a href="#" data-info="legal" class="hover:text-white transition">Aviso legal</a></li>
+                    <li><a href="#" data-info="envios" class="hover:text-white transition">Envíos de ejemplo</a></li>
+                    <li><a href="#" data-info="devoluciones" class="hover:text-white transition">Cambios y devoluciones</a></li>
+                    <li><a href="#" data-info="cancelacion" class="hover:text-white transition">Política de cancelación</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mx-auto max-w-7xl px-6 border-t border-zinc-800 mt-12 pt-6 text-center text-xs">
+            Calzados · Demo — Proyecto de portfolio. Sin actividad comercial.
+        </div>
+    </footer>
+
+    <!-- CART SLIDE-OVER DRAWER (HIDDEN BY DEFAULT) -->
+    <div id="cart-overlay" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs hidden transition-opacity duration-300"></div>
+    <div id="cart-drawer" role="dialog" aria-modal="true" aria-label="Carrito" aria-hidden="true" class="fixed right-0 top-0 bottom-0 z-50 flex h-full w-full max-w-md translate-x-full flex-col bg-white shadow-2xl cart-drawer">
+        <!-- Cart Header -->
+        <div class="flex items-center justify-between border-b border-zinc-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="h-5 w-5 text-primary"></i>
+                Tu Carrito
+            </h3>
+            <div class="flex items-center gap-3">
+                <button id="empty-cart-btn" class="flex items-center gap-1.5 rounded-lg bg-red-50 px-3 py-1.5 text-xs font-bold text-red-600 hover:bg-red-100 transition hidden" aria-label="Vaciar carrito">
+                    <i data-lucide="trash-2" class="h-3.5 w-3.5"></i> Vaciar
+                </button>
+                <button id="close-cart-btn" class="rounded-full p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-slate-800 transition" aria-label="Cerrar carrito">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Empty Cart State -->
+        <div id="cart-empty" class="flex-grow flex flex-col items-center justify-center p-6 text-center">
+            <i data-lucide="shopping-cart" class="h-12 w-12 text-zinc-300 mb-3"></i>
+            <p class="text-slate-600 font-medium">El carrito está vacío</p>
+            <p class="text-xs text-zinc-400 mt-1">¡Añade algunos zapatos de nuestro catálogo!</p>
+        </div>
+
+        <!-- Cart Footer -->
+        <div id="cart-footer" class="border-t border-zinc-200 p-6 space-y-4 bg-zinc-50 hidden">
+            <div class="flex items-center justify-between text-sm font-medium text-slate-600">
+                <span>Subtotal</span>
+                <span id="cart-subtotal" class="text-lg font-bold text-slate-900">0,00 €</span>
+            </div>
+            <p class="text-xs text-zinc-400">
+                Impuestos incluidos. Envíos de ejemplo calculados en la pantalla de pago.
+            </p>
+            <button id="checkout-btn" class="w-full rounded-full bg-gradient-orange py-4 text-center text-sm font-semibold text-white shadow-lg shadow-zinc-950/20 hover:shadow-zinc-950/30 hover:-translate-y-0.5 transition duration-200">
+                Simular pedido
+            </button>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL MODAL (HIDDEN BY DEFAULT) -->
+    <div id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/55 backdrop-blur-xs hidden">
+        <div class="relative w-full max-w-3xl rounded-2xl bg-white p-6 shadow-2xl animate-slide-up flex flex-col md:flex-row gap-6 max-h-[90vh] overflow-y-auto">
+            <!-- Close button -->
+            <button id="close-modal-btn" aria-label="Cerrar producto" class="absolute right-4 top-4 rounded-full bg-zinc-100 p-1.5 text-zinc-500 hover:bg-zinc-200 hover:text-slate-800 transition z-10">
+                <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+
+            <!-- Product Gallery/Image -->
+            <div class="w-full md:w-1/2 flex flex-col items-center gap-4">
+                <div class="w-full flex items-center justify-center bg-zinc-100 rounded-xl overflow-hidden min-h-[16rem]">
+                    <img id="modal-product-img" src="" alt="" class="w-full h-72 object-cover transition-all duration-300">
+                </div>
+                <!-- Thumbnail Gallery Container -->
+                <div id="modal-thumbnails" class="flex gap-2 w-full overflow-x-auto pb-2 px-1">
+                    <!-- Thumbnails will be injected here via app.js -->
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="w-full md:w-1/2 flex flex-col justify-between">
+                <div>
+                    <span id="modal-product-brand" class="text-xs font-bold uppercase tracking-wider text-primary"></span>
+                    <h3 id="modal-product-name" class="text-2xl font-black text-slate-900 mt-1"></h3>
+
+                    <p id="modal-product-price" class="text-3xl font-extrabold text-slate-900 mt-4"></p>
+                    <p id="modal-product-desc" class="text-sm text-zinc-500 mt-4 leading-relaxed"></p>
+
+                    <!-- Size Selector -->
+                    <div class="mt-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Selecciona Talla (EU)</span>
+                        <div id="modal-sizes-container" class="flex flex-wrap gap-2 mt-2">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Color Selector -->
+                    <div class="mt-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Selecciona Color</span>
+                        <div id="modal-colors-container" class="flex flex-wrap gap-2 mt-2">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-zinc-100">
+                    <button id="modal-add-to-cart-btn" class="w-full rounded-full bg-slate-900 hover:bg-slate-800 py-4 text-center text-sm font-semibold text-white transition">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEGAL / INFORMATION MODAL (HIDDEN BY DEFAULT) -->
+    <div id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-modal-title" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden">
+        <div class="relative w-full max-w-2xl rounded-2xl bg-white p-8 shadow-2xl animate-slide-up max-h-[85vh] overflow-y-auto flex flex-col">
+            <!-- Close button -->
+            <button id="close-info-btn" aria-label="Cerrar información" class="absolute right-4 top-4 rounded-full bg-zinc-100 p-1.5 text-zinc-500 hover:bg-zinc-200 hover:text-slate-800 transition z-10">
+                <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+
+            <!-- Modal Content -->
+            <div class="max-w-none">
+                <h3 id="info-modal-title" class="text-2xl font-black text-slate-900 mb-4 border-b pb-3 uppercase tracking-wide"></h3>
+                <div id="info-modal-body" class="text-sm text-slate-600 space-y-4 leading-relaxed">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU DRAWER (HIDDEN BY DEFAULT) -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs hidden transition-opacity duration-300"></div>
+    <div id="mobile-menu-drawer" role="dialog" aria-modal="true" aria-label="Navegación" aria-hidden="true" class="fixed left-0 top-0 bottom-0 z-50 flex h-full w-full max-w-[80%] -translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out">
+        <div class="flex items-center justify-between border-b border-zinc-200 p-6">
+            <span class="text-lg font-extrabold tracking-tight text-slate-900">Menú</span>
+            <button id="close-mobile-menu-btn" class="rounded-full p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-slate-800 transition" aria-label="Cerrar menú">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-6 gap-6 text-lg font-medium text-slate-800">
+            <a href="#" class="mobile-nav-link flex items-center justify-between border-b border-zinc-100 pb-4">Inicio <i data-lucide="chevron-right" class="h-4 w-4 text-zinc-400"></i></a>
+            <a href="#catalogo" class="mobile-nav-link flex items-center justify-between border-b border-zinc-100 pb-4">Catálogo <i data-lucide="chevron-right" class="h-4 w-4 text-zinc-400"></i></a>
+            <a href="#" class="mobile-nav-link flex items-center justify-between border-b border-zinc-100 pb-4">Novedades <i data-lucide="chevron-right" class="h-4 w-4 text-zinc-400"></i></a>
+            <a href="#contacto" class="mobile-nav-link flex items-center justify-between border-b border-zinc-100 pb-4">Contacto <i data-lucide="chevron-right" class="h-4 w-4 text-zinc-400"></i></a>
+        </nav>
+    </div>
+
+    <!-- TOAST NOTIFICATIONS CONTAINER -->
+    <div id="toast-container" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-[70] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
